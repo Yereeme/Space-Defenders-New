@@ -1,0 +1,106 @@
+[gd_scene load_steps=11 format=3 uid="uid://b1e2q21awb37g"]
+
+[ext_resource type="Script" path="res://Items/Items.gd" id="1_a36qp"]
+[ext_resource type="Texture2D" uid="uid://rbhmjiiqx8nt" path="res://Items/Heart.png" id="2_0uaxr"]
+[ext_resource type="AudioStream" uid="uid://yun3dw4dju1y" path="res://Sounds/8-bit Game Over.wav" id="3_8bh8v"]
+[ext_resource type="AudioStream" uid="uid://dyi1qnuoh3emj" path="res://Sounds/Death Sound Explosion.wav" id="4_k2rog"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_d2lvb"]
+streams_count = 2
+stream_0/stream = ExtResource("3_8bh8v")
+stream_1/stream = ExtResource("4_k2rog")
+
+[sub_resource type="Animation" id="Animation_yfj5n"]
+resource_name = "ExtraHeart"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_n8osy"]
+resource_name = "HeartHealth"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 4]
+}
+
+[sub_resource type="Animation" id="Animation_xj2i6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4l4vv"]
+resource_name = "Hi"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i42rt"]
+_data = {
+"ExtraHeart": SubResource("Animation_yfj5n"),
+"HeartHealth": SubResource("Animation_n8osy"),
+"Hi": SubResource("Animation_4l4vv"),
+"RESET": SubResource("Animation_xj2i6")
+}
+
+[node name="ExtraLives" type="Node2D"]
+script = ExtResource("1_a36qp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0927735, 0.0908203)
+texture = ExtResource("2_0uaxr")
+hframes = 5
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-12, -15, -3, -15, 12, -15, 20, -7, 21, 4, 3, 24, -3, 24, -21, 3, -21, -6)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_d2lvb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_i42rt")
+}
+autoplay = "HeartHealth"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

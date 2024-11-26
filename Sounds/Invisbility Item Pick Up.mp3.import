@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dx4d13y4e04rq"
+path="res://.godot/imported/Invisbility Item Pick Up.mp3-78bf3b59d03f8cdd817caa26de86f678.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Invisbility Item Pick Up.mp3"
+dest_files=["res://.godot/imported/Invisbility Item Pick Up.mp3-78bf3b59d03f8cdd817caa26de86f678.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

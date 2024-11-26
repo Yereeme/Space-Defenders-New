@@ -1,0 +1,9 @@
+res://Connection/multiplayer.tscn
+res://Pause Menu/PauseMenu.gdshader
+res://Game.tscn
+res://Pause Menu/Pause Menu.tscn
+res://Enemies/Scripts/enemy.tscn
+res://Players/Laser.tscn
+res://Players/LaserWeapon.tscn
+res://Enemies/Scripts/enemy_bullet.tscn
+res://Players/Players.tscn

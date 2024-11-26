@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://brum5o57akh6s"]
+
+[ext_resource type="Script" path="res://Items/Items2.gd" id="1_i1afo"]
+[ext_resource type="Texture2D" uid="uid://c8y2han13fhjb" path="res://Items/Invisibility.png" id="2_n0af1"]
+
+[sub_resource type="Animation" id="Animation_ld7i7"]
+resource_name = "HideOne"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gsfql"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d7cdp"]
+_data = {
+"HideOne": SubResource("Animation_ld7i7"),
+"RESET": SubResource("Animation_gsfql")
+}
+
+[node name="Invisibility" type="Node2D"]
+script = ExtResource("1_i1afo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.175, 0.163333)
+texture = ExtResource("2_n0af1")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(17, -51, -36, -33, -21, 45, -4, 53, 37, 23, 25, 7, 20, -9, 19, -24, 30, -33, 32, -38)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_d7cdp")
+}
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

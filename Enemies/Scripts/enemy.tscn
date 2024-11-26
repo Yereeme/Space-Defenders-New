@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://chvjla11ng42j"]
+
+[ext_resource type="Script" path="res://Enemies/enemy.gd" id="1_my1yn"]
+[ext_resource type="Texture2D" uid="uid://uipk1g80jm13" path="res://Enemies/Enemies.png" id="2_g8cu2"]
+[ext_resource type="AudioStream" uid="uid://dxkril3vn3mgr" path="res://Sounds/Enemies Lazer Shot.wav" id="3_7w6cc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lsni7"]
+size = Vector2(351, 350.573)
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
+scale = Vector2(0.279542, 0.279542)
+collision_layer = 262208
+collision_mask = 2
+script = ExtResource("1_my1yn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -3.57728)
+rotation = 1.5708
+scale = Vector2(1.66589, 1.5338)
+texture = ExtResource("2_g8cu2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.15454, -3.57728)
+shape = SubResource("RectangleShape2D_lsni7")
+
+[node name="ShootingTimer" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(-264.719, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7w6cc")
+autoplay = true
+
+[connection signal="timeout" from="ShootingTimer" to="." method="_on_shooting_timer_timeout"]
