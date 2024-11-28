@@ -1,15 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://b1e2q21awb37g"]
+[gd_scene load_steps=10 format=3 uid="uid://b1e2q21awb37g"]
 
 [ext_resource type="Script" path="res://Items/Items.gd" id="1_a36qp"]
 [ext_resource type="Texture2D" uid="uid://rbhmjiiqx8nt" path="res://Items/Heart.png" id="2_0uaxr"]
-[ext_resource type="AudioStream" uid="uid://yun3dw4dju1y" path="res://Sounds/8-bit Game Over.wav" id="3_8bh8v"]
-[ext_resource type="AudioStream" uid="uid://dyi1qnuoh3emj" path="res://Sounds/Death.wav" id="4_k2rog"]
-
+[ext_resource type="AudioStream" uid="uid://0h0nk5non0tm" path="res://Sounds/Health.wav" id="3_66sid"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_d2lvb"]
-streams_count = 2
-stream_0/stream = ExtResource("3_8bh8v")
-stream_1/stream = ExtResource("4_k2rog")
+streams_count = 1
+stream_0/stream = ExtResource("3_66sid")
 
 [sub_resource type="Animation" id="Animation_yfj5n"]
 resource_name = "ExtraHeart"
@@ -42,6 +39,9 @@ tracks/0/keys = {
 "values": [0, 4]
 }
 
+[sub_resource type="Animation" id="Animation_4l4vv"]
+resource_name = "Hi"
+
 [sub_resource type="Animation" id="Animation_xj2i6"]
 length = 0.001
 tracks/0/type = "value"
@@ -68,9 +68,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
-
-[sub_resource type="Animation" id="Animation_4l4vv"]
-resource_name = "Hi"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i42rt"]
 _data = {
