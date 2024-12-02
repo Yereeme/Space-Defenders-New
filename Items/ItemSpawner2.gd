@@ -29,3 +29,4 @@ func spawn_multiple():
 
 func _on_timer_timeout() -> void:
 	create_Items2()
+	queue_free()

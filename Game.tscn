@@ -113,9 +113,17 @@ shape = SubResource("WorldBoundaryShape2D_tbfd0")
 script = ExtResource("7_fhdqn")
 max_Items = 5
 
+[node name="Timer" type="Timer" parent="Spawner1"]
+wait_time = 500.0
+autostart = true
+
 [node name="Spawner2" type="Node" parent="."]
 script = ExtResource("8_kfdc0")
 max_Items2 = 5
+
+[node name="Timer" type="Timer" parent="Spawner2"]
+wait_time = 500.0
+autostart = true
 
 [node name="WindowControl" type="Node" parent="."]
 script = ExtResource("9_jg4sh")
@@ -128,3 +136,6 @@ script = ExtResource("9_jg4sh")
 script = ExtResource("11_barex")
 enemy_scene = ExtResource("12_cer12")
 wave_interval = 3.0
+
+[connection signal="timeout" from="Spawner1/Timer" to="Spawner1" method="_on_timer_timeout"]
+[connection signal="timeout" from="Spawner2/Timer" to="Spawner2" method="_on_timer_timeout"]

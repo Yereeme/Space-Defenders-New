@@ -6,6 +6,15 @@ const friction = 600
 
 var input = Vector2.ZERO
 
+@export var player := 1 :
+	set(id):
+		player = id
+		# Give authority over the player input to the appropriate peer.
+		$InputSynchronizer.set_multiplayer_authority(id)
+
+# Player synchronized input.
+@onready var input_sync = $InputSynchronizer
+
 # Player health
 @export var max_health: int = 3  # Maximum health of the player
 var current_health: int = max_health  # Tracks current health
