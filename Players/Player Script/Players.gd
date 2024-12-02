@@ -48,6 +48,7 @@ func take_damage(amount: int) -> void:
 	update_lives_ui()  # Update the UI to reflect the remaining lives
 
 	if current_health <= 0:
+		get_tree().change_scene_to_file("res://Game Over.tscn")
 		print("Player is dead!")
 		queue_free()  # Remove the player when health is 0
 

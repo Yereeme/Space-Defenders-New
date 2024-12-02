@@ -14,6 +14,10 @@ config/name="Space-Defenders"
 run/main_scene="res://Connection/multiplayer.tscn"
 config/features=PackedStringArray("4.3")
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [global_group]
 
 players=""
