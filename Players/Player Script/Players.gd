@@ -11,10 +11,10 @@ var input = Vector2.ZERO
 var current_health: int = max_health  # Tracks current health
 
 # Reference to the Lives node in the UI
-@onready var lives_ui = $"../Lives" # Adjust this path to point to your Lives node
+var lives_ui: Node = null
 
 # Set by the authority, synchronized on spawn.
-@export var player := 1 :
+@export var player := 1:
 	set(id):
 		player = id
 		# Give authority over the player input to the appropriate peer.
@@ -24,6 +24,10 @@ var current_health: int = max_health  # Tracks current health
 @onready var input_sync = $InputSynchronizer
 
 func _ready() -> void:
+	# Assign the Lives node
+	lives_ui = get_node_or_null("../Lives")  # Adjust this path to match your scene
+	if lives_ui == null:
+		print("Error: Lives UI node not found! Check the path.")
 	current_health = max_health  # Initialize player health
 	update_lives_ui()  # Ensure the UI matches the player's starting health
 
@@ -42,7 +46,7 @@ func player_movement(delta: float) -> void:
 			velocity -= velocity.normalized() * (friction * delta)
 		else:
 			velocity = Vector2.ZERO
-	else: 
+	else:
 		velocity += (input * accel * delta)
 		velocity = velocity.limit_length(max_speed)
 	move_and_slide()
@@ -64,6 +68,10 @@ func take_damage(amount: int) -> void:
 
 # Update the UI to reflect the player's remaining lives
 func update_lives_ui() -> void:
+	if lives_ui == null:
+		print("Error: Cannot update Lives UI. Lives node is not assigned!")
+		return
+
 	for i in range(lives_ui.get_child_count()):
 		var life_icon = lives_ui.get_child(i)
 		if i < current_health:

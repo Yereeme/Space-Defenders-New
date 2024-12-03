@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://2eyhdlnm4py1"]
+
+[ext_resource type="Script" path="res://Enemies/mothership.gd" id="1_8w2av"]
+[ext_resource type="PackedScene" uid="uid://77g548hwj31v" path="res://Enemies/enemy_bullet.tscn" id="2_7mxcn"]
+[ext_resource type="Texture2D" uid="uid://dqvd8ut6f1c6h" path="res://Enemies/Boss.png" id="2_ccv47"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fyt60"]
+size = Vector2(562, 642)
+
+[node name="Mothership" type="CharacterBody2D" groups=["enemies"]]
+rotation = -1.5708
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("1_8w2av")
+bullet_scene = ExtResource("2_7mxcn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ccv47")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.999999, 3)
+shape = SubResource("RectangleShape2D_fyt60")
+
+[node name="Cannon1" type="Marker2D" parent="."]
+position = Vector2(118, -206)
+
+[node name="Cannon2" type="Marker2D" parent="."]
+position = Vector2(-105, -202)
+
+[node name="MiddleCannon" type="Marker2D" parent="."]
+position = Vector2(7.86805e-06, -180)
+
+[node name="Timer" type="Timer" parent="."]
