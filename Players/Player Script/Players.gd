@@ -13,6 +13,16 @@ var current_health: int = max_health  # Tracks current health
 # Reference to the Lives node in the UI
 @onready var lives_ui = $"../Lives" # Adjust this path to point to your Lives node
 
+# Set by the authority, synchronized on spawn.
+@export var player := 1 :
+	set(id):
+		player = id
+		# Give authority over the player input to the appropriate peer.
+		$InputSynchronizer.set_multiplayer_authority(id)
+
+# Player synchronized input.
+@onready var input_sync = $InputSynchronizer
+
 func _ready() -> void:
 	current_health = max_health  # Initialize player health
 	update_lives_ui()  # Ensure the UI matches the player's starting health

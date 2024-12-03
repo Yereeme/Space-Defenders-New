@@ -3,16 +3,16 @@
 [ext_resource type="Script" path="res://Game.gd" id="1_hnkhj"]
 [ext_resource type="Texture2D" uid="uid://bnx5v0l5w3kq5" path="res://Background/Space Background.png" id="2_mqjvd"]
 [ext_resource type="Texture2D" uid="uid://cou577hsu7v75" path="res://Background/xetuna-planet.png" id="3_edr7j"]
-[ext_resource type="PackedScene" uid="uid://cr6d7ofcbt08a" path="res://Stopwatch.tscn" id="4_r3yj8"]
+[ext_resource type="PackedScene" uid="uid://cr6d7ofcbt08a" path="res://UI/Stopwatch.tscn" id="4_r3yj8"]
 [ext_resource type="PackedScene" uid="uid://bptq23qhwwfqb" path="res://Players/Players.tscn" id="4_yaibv"]
-[ext_resource type="Script" path="res://Score Label.gd" id="5_toc4t"]
+[ext_resource type="Script" path="res://UI/Score Label.gd" id="5_toc4t"]
 [ext_resource type="AudioStream" uid="uid://cnys56o6rnjd" path="res://Sounds/Game Music.wav" id="5_v3vho"]
 [ext_resource type="Texture2D" uid="uid://drw1eetuknjl0" path="res://Players/Players.png" id="6_is43n"]
 [ext_resource type="Script" path="res://Items/ItemSpawner.gd" id="7_fhdqn"]
 [ext_resource type="Script" path="res://Items/ItemSpawner2.gd" id="8_kfdc0"]
 [ext_resource type="Script" path="res://Connection/WindowControl.gd" id="9_jg4sh"]
 [ext_resource type="PackedScene" uid="uid://b4bmc0rhj75rn" path="res://Pause Menu/Pause Menu.tscn" id="10_v7yhh"]
-[ext_resource type="Script" path="res://wave_manager.gd" id="11_barex"]
+[ext_resource type="Script" path="res://UI/wave_manager.gd" id="11_barex"]
 [ext_resource type="PackedScene" uid="uid://chvjla11ng42j" path="res://Enemies/enemy.tscn" id="12_cer12"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fputq"]
@@ -73,9 +73,10 @@ text = "Score:"
 position = Vector2(-10, -52)
 collision_mask = 36
 
-[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+[node name="PlayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://Players/Players.tscn")
 spawn_path = NodePath("../Player 1")
+spawn_limit = 2
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_v3vho")
@@ -147,11 +148,19 @@ shape = SubResource("WorldBoundaryShape2D_tbfd0")
 
 [node name="Spawner1" type="Node" parent="."]
 script = ExtResource("7_fhdqn")
-max_Items = 5
+max_Items = 0
+
+[node name="Timer" type="Timer" parent="Spawner1"]
+wait_time = 60.0
+autostart = true
 
 [node name="Spawner2" type="Node" parent="."]
 script = ExtResource("8_kfdc0")
-max_Items2 = 5
+max_Items2 = 0
+
+[node name="Timer" type="Timer" parent="Spawner2"]
+wait_time = 60.0
+autostart = true
 
 [node name="WindowControl" type="Node" parent="."]
 script = ExtResource("9_jg4sh")
@@ -168,3 +177,6 @@ offset_bottom = 2.0
 script = ExtResource("11_barex")
 enemy_scene = ExtResource("12_cer12")
 wave_interval = 3.0
+
+[connection signal="timeout" from="Spawner1/Timer" to="Spawner1" method="_on_timer_timeout"]
+[connection signal="timeout" from="Spawner2/Timer" to="Spawner2" method="_on_timer_timeout"]
