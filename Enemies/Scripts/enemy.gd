@@ -35,4 +35,5 @@ func take_damage(amount: int) -> void:
 		Global.score += 100
 		print("Enemy shot! Score: ", Global.score)
 		# Scoring System when enemy is killed on scene
+		$AnimatedSprite2D.play("explosion")
 		queue_free()  # Remove the enemy from the scene

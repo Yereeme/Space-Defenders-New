@@ -53,7 +53,7 @@ func player_movement(delta: float) -> void:
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Shoot"):
-		$LaserWeapon.shoot()  # Call the shoot function
+		$Lasers.shoot()  # Call the shoot function
 
 # Handle taking damage from enemy bullets
 func take_damage(amount: int) -> void:

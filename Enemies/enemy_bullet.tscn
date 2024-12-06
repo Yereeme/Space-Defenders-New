@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://77g548hwj31v"]
 
 [ext_resource type="Script" path="res://Enemies/Scripts/enemy_bullet.gd" id="1_tn4cd"]
-[ext_resource type="Texture2D" uid="uid://cfjpd543o2eog" path="res://Enemies/Enemy Lazer.png" id="2_ditdl"]
+[ext_resource type="Texture2D" uid="uid://cfjpd543o2eog" path="res://Graphics/Enemy Lazer.png" id="2_ditdl"]
 [ext_resource type="AudioStream" uid="uid://dxkril3vn3mgr" path="res://Sounds/Enemies Lazer Shot.wav" id="3_tte0g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26upx"]

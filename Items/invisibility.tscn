@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://brum5o57akh6s"]
 
 [ext_resource type="Script" path="res://Items/Items2.gd" id="1_i1afo"]
-[ext_resource type="Texture2D" uid="uid://c8y2han13fhjb" path="res://Items/Invisibility.png" id="2_n0af1"]
+[ext_resource type="Texture2D" uid="uid://c8y2han13fhjb" path="res://Graphics/Invisibility.png" id="2_n0af1"]
 
 [sub_resource type="Animation" id="Animation_ld7i7"]
 resource_name = "HideOne"

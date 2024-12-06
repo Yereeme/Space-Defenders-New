@@ -37,15 +37,15 @@ func _exit_tree():
 
 
 func add_player(id):
-	var character = preload("res://Players/Players.tscn").instantiate()
+	var character = preload("res://Players/Player.tscn").instantiate()
 	# Set player id.
 	character.player = id
 	# Randomize character position.
 	character.position = Vector2(randf()*100.0, randf()*100.0)
 	character.name = str(id)
-	$"Player 1".add_child(character, true)
+	$Player.add_child(character, true)
 	
 func del_player(id):
-	if not $"Player 1".has_node(str(id)):
+	if not $Player.has_node(str(id)):
 		return
-	$"Player 1".get_node(str(id)).queue_free()
+	$Player.get_node(str(id)).queue_free()

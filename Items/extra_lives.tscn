@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://b1e2q21awb37g"]
 
 [ext_resource type="Script" path="res://Items/Items.gd" id="1_a36qp"]
-[ext_resource type="Texture2D" uid="uid://rbhmjiiqx8nt" path="res://Items/Heart.png" id="2_0uaxr"]
+[ext_resource type="Texture2D" uid="uid://rbhmjiiqx8nt" path="res://Graphics/Heart.png" id="2_0uaxr"]
 [ext_resource type="AudioStream" uid="uid://yun3dw4dju1y" path="res://Sounds/8-bit Game Over.wav" id="3_8bh8v"]
 [ext_resource type="AudioStream" uid="uid://dyi1qnuoh3emj" path="res://Sounds/Death.wav" id="4_k2rog"]
 

@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://bptq23qhwwfqb"]
 
-[ext_resource type="Texture2D" uid="uid://drw1eetuknjl0" path="res://Players/Players.png" id="1_akfgr"]
+[ext_resource type="Texture2D" uid="uid://drw1eetuknjl0" path="res://Graphics/Players.png" id="1_akfgr"]
 [ext_resource type="Script" path="res://Players/Player Script/Players.gd" id="1_ikgy2"]
 [ext_resource type="PackedScene" uid="uid://baqrqr8owyv6p" path="res://Players/LaserWeapon.tscn" id="3_oyr8h"]
-[ext_resource type="Script" path="res://Players/input_synchronizer.gd" id="4_7pc7a"]
+[ext_resource type="Script" path="res://Connection/input_synchronizer.gd" id="4_7pc7a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_de1mc"]
 size = Vector2(72, 68)
@@ -23,7 +23,7 @@ properties/0/replication_mode = 1
 
 [node name="Player" type="CharacterBody2D" groups=["players"]]
 z_index = 1
-collision_mask = 48
+collision_mask = 60
 script = ExtResource("1_ikgy2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

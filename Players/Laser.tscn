@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ktw12tmhtr8x"]
 
 [ext_resource type="Script" path="res://Players/Player Script/Laser.gd" id="1_7o15s"]
-[ext_resource type="Texture2D" uid="uid://d3phrin7rxa7o" path="res://Players/Players Lazer shoot.png" id="1_q1bcd"]
+[ext_resource type="Texture2D" uid="uid://d3phrin7rxa7o" path="res://Graphics/Players Lazer shoot.png" id="1_q1bcd"]
 [ext_resource type="AudioStream" uid="uid://ci6y02whusux8" path="res://Sounds/Player Lazer Shot.wav" id="2_2oxvu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnf4n"]
