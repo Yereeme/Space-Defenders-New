@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvgmjl7sqjiv8"]
+
+[ext_resource type="Script" path="res://Items/powerup.gd" id="1_pn03n"]
+[ext_resource type="Texture2D" uid="uid://c8y2han13fhjb" path="res://Graphics/Invisibility.png" id="1_qebrx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_du4cw"]
+size = Vector2(62, 110)
+
+[node name="Powerup" type="Area2D"]
+script = ExtResource("1_pn03n")
+powerupMoveSpeed = null
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.175833, 0.170833)
+texture = ExtResource("1_qebrx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -3)
+shape = SubResource("RectangleShape2D_du4cw")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-2, -2)
+scale = Vector2(3.2, 5.4)

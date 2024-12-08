@@ -10,10 +10,9 @@ func _ready():
 	multiplayer.server_relay = false
 
 	# Automatically start the server in headless mode.
-	#if DisplayServer.get_name() == "headless":
-		#print("Automatically starting dedicated server")
-		#_on_host_pressed.call_deferred()
-
+	if DisplayServer.get_name() == "headless":
+		print("Automatically starting dedicated server")
+		_on_host_pressed.call_deferred()
 
 func _on_host_pressed():
 	# Start as server
@@ -24,7 +23,6 @@ func _on_host_pressed():
 		return
 	multiplayer.multiplayer_peer = peer
 	start_game()
-
 
 func _on_connect_pressed():
 	# Start as client
@@ -48,7 +46,6 @@ func start_game():
 	# Clients will instantiate the level via the spawner.
 	if multiplayer.is_server():
 		change_level.call_deferred(load(LEVEL_REF))
-
 
 # Call this function deferred and only on the main authority (server).
 func change_level(scene: PackedScene):

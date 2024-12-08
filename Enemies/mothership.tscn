@@ -85,6 +85,7 @@ position = Vector2(7.86805e-06, -180)
 [node name="Timer" type="Timer" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(26.9391, 3.36751)
 scale = Vector2(5.20925, 7.09335)
 sprite_frames = SubResource("SpriteFrames_50lxc")

@@ -3,7 +3,6 @@ class_name Game
 
 @export var stopwatch_label : Label
 
-
 var stopwatch : Stopwatch
 
 func _process(delta):
@@ -34,7 +33,6 @@ func _exit_tree():
 		return
 	multiplayer.peer_connected.disconnect(add_player)
 	multiplayer.peer_disconnected.disconnect(del_player)
-
 
 func add_player(id):
 	var character = preload("res://Players/Player.tscn").instantiate()

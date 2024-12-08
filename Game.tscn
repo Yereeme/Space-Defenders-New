@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c4hus6jiwsjon"]
+[gd_scene load_steps=18 format=3 uid="uid://c4hus6jiwsjon"]
 
 [ext_resource type="Script" path="res://Game.gd" id="1_hnkhj"]
 [ext_resource type="Texture2D" uid="uid://bnx5v0l5w3kq5" path="res://Background/Space Background.png" id="2_mqjvd"]
@@ -7,8 +7,7 @@
 [ext_resource type="Script" path="res://UI/Score Label.gd" id="5_toc4t"]
 [ext_resource type="AudioStream" uid="uid://cnys56o6rnjd" path="res://Sounds/Game Music.wav" id="5_v3vho"]
 [ext_resource type="Texture2D" uid="uid://drw1eetuknjl0" path="res://Graphics/Players.png" id="6_is43n"]
-[ext_resource type="Script" path="res://Items/ItemSpawner.gd" id="7_fhdqn"]
-[ext_resource type="Script" path="res://Items/ItemSpawner2.gd" id="8_kfdc0"]
+[ext_resource type="PackedScene" uid="uid://4gnws64nfh6m" path="res://Items/spawner_1.tscn" id="8_gopnc"]
 [ext_resource type="PackedScene" uid="uid://b4bmc0rhj75rn" path="res://Pause Menu/Pause Menu.tscn" id="10_v7yhh"]
 [ext_resource type="Script" path="res://UI/wave_manager.gd" id="11_barex"]
 [ext_resource type="PackedScene" uid="uid://chvjla11ng42j" path="res://Enemies/enemy.tscn" id="12_cer12"]
@@ -144,21 +143,7 @@ position = Vector2(1153, 340)
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_tbfd0")
 
-[node name="Spawner1" type="Node" parent="."]
-script = ExtResource("7_fhdqn")
-max_Items = 1
-
-[node name="Timer" type="Timer" parent="Spawner1"]
-wait_time = 60.0
-autostart = true
-
-[node name="Spawner2" type="Node" parent="."]
-script = ExtResource("8_kfdc0")
-max_Items2 = 1
-
-[node name="Timer" type="Timer" parent="Spawner2"]
-wait_time = 60.0
-autostart = true
+[node name="Spawner1" parent="." instance=ExtResource("8_gopnc")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -177,6 +162,3 @@ mothership_spawn_time = 2.0
 
 [node name="Quit" type="Node" parent="."]
 script = ExtResource("15_4otwu")
-
-[connection signal="timeout" from="Spawner1/Timer" to="Spawner1" method="_on_timer_timeout"]
-[connection signal="timeout" from="Spawner2/Timer" to="Spawner2" method="_on_timer_timeout"]

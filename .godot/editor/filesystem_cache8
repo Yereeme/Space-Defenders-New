@@ -1,21 +1,21 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1733456070
-Game Over.gd::GDScript::-1::1733244362::0::1::::<>Control<>::
-Game Over.tscn::PackedScene::665963762512836838::1733453977::0::1::::<><>::res://Game Over.gd<>uid://yun3dw4dju1y::::res://Sounds/8-bit Game Over.wav<>uid://bnx5v0l5w3kq5::::res://Background/Space Background.png<>uid://cou577hsu7v75::::res://Background/xetuna-planet.png
-Game.gd::GDScript::-1::1733452138::0::1::::Game<>Node2D<>::
-Game.tscn::PackedScene::6824016603833872445::1733456414::0::1::::<><>::res://Game.gd<>uid://bnx5v0l5w3kq5::::res://Background/Space Background.png<>uid://cou577hsu7v75::::res://Background/xetuna-planet.png<>uid://cr6d7ofcbt08a::::res://UI/Stopwatch.tscn<>res://UI/Score Label.gd<>uid://cnys56o6rnjd::::res://Sounds/Game Music.wav<>uid://drw1eetuknjl0::::res://Graphics/Players.png<>res://Items/ItemSpawner.gd<>res://Items/ItemSpawner2.gd<>uid://b4bmc0rhj75rn::::res://Pause Menu/Pause Menu.tscn<>res://UI/wave_manager.gd<>uid://chvjla11ng42j::::res://Enemies/enemy.tscn<>res://quit.gd<>uid://2eyhdlnm4py1::::res://Enemies/mothership.tscn
-Global.gd::GDScript::-1::1733244362::0::1::::<>Node<>::
+::res://::1733588411
+Game Over.gd::GDScript::-1::1733588386::0::1::::<>Control<>::
+Game Over.tscn::PackedScene::665963762512836838::1733588386::0::1::::<><>::res://Game Over.gd<>uid://yun3dw4dju1y::::res://Sounds/8-bit Game Over.wav<>uid://bnx5v0l5w3kq5::::res://Background/Space Background.png<>uid://cou577hsu7v75::::res://Background/xetuna-planet.png
+Game.gd::GDScript::-1::1733588386::0::1::::Game<>Node2D<>::
+Game.tscn::PackedScene::6824016603833872445::1733588386::0::1::::<><>::res://Game.gd<>uid://bnx5v0l5w3kq5::::res://Background/Space Background.png<>uid://cou577hsu7v75::::res://Background/xetuna-planet.png<>uid://cr6d7ofcbt08a::::res://UI/Stopwatch.tscn<>res://UI/Score Label.gd<>uid://cnys56o6rnjd::::res://Sounds/Game Music.wav<>uid://drw1eetuknjl0::::res://Graphics/Players.png<>res://Items/ItemSpawner.gd<>res://Items/ItemSpawner2.gd<>uid://b4bmc0rhj75rn::::res://Pause Menu/Pause Menu.tscn<>res://UI/wave_manager.gd<>uid://chvjla11ng42j::::res://Enemies/enemy.tscn<>res://Connection/quit.gd<>uid://2eyhdlnm4py1::::res://Enemies/mothership.tscn
+Global.gd::GDScript::-1::1733588386::0::1::::<>Node<>::
 icon.svg::CompressedTexture2D::7978215500813854408::1732644662::1733426328::1::::<><>::
 README.md::TextFile::-1::1732644100::0::1::::<><>::
-quit.gd::GDScript::-1::1733456003::0::1::::<>Node<>::
 ::res://Background/::1733426328
 Asteriods.png::CompressedTexture2D::4628071043599830928::1732644662::1733426328::1::::<><>::
 Space Background.png::CompressedTexture2D::3348216682256070566::1732644662::1733426328::1::::<><>::
 xetuna-planet.png::CompressedTexture2D::5798653080994484594::1732644662::1733426328::1::::<><>::
-::res://Connection/::1733456407
-input_synchronizer.gd::GDScript::-1::1733433779::0::1::::<>MultiplayerSynchronizer<>::
+::res://Connection/::1733588386
+input_synchronizer.gd::GDScript::-1::1733588386::0::1::::<>MultiplayerSynchronizer<>::
 multiplayer.gd::GDScript::-1::1733448425::0::1::::<>Node<>::
-multiplayer.tscn::PackedScene::5143570892802404392::1733456070::0::1::::<><>::res://Connection/multiplayer.gd
+multiplayer.tscn::PackedScene::5143570892802404392::1733588294::0::1::::<><>::res://Connection/multiplayer.gd
+quit.gd::GDScript::-1::1733588386::0::1::::<>Node<>::
 ::res://Effects/::1732663482
 ::res://Effects/Pixel explosion/::1733426328
 pixelExplosion00.png::CompressedTexture2D::8371248968168426836::1732663482::1733426328::1::::<><>::
@@ -27,53 +27,62 @@ pixelExplosion05.png::CompressedTexture2D::3944261565811128578::1732663482::1733
 pixelExplosion06.png::CompressedTexture2D::8543138328625333557::1732663482::1733426328::1::::<><>::
 pixelExplosion07.png::CompressedTexture2D::6551983719183277803::1732663482::1733426328::1::::<><>::
 pixelExplosion08.png::CompressedTexture2D::728407996207848392::1732663482::1733426328::1::::<><>::
-::res://Enemies/::1733450784
-enemy.tscn::PackedScene::5308081343719414611::1733450764::0::1::::<><>::res://Enemies/Scripts/enemy.gd<>uid://uipk1g80jm13::::res://Graphics/Enemies.png<>uid://dxkril3vn3mgr::::res://Sounds/Enemies Lazer Shot.wav
-enemy_bullet.tscn::PackedScene::2312522534824229057::1733450767::0::1::::<><>::res://Enemies/Scripts/enemy_bullet.gd<>uid://cfjpd543o2eog::::res://Graphics/Enemy Lazer.png<>uid://dxkril3vn3mgr::::res://Sounds/Enemies Lazer Shot.wav
-mothership.tscn::PackedScene::1904826172797596430::1733450784::0::1::::<><>::res://Enemies/Scripts/mothership.gd<>uid://77g548hwj31v::::res://Enemies/enemy_bullet.tscn<>uid://dqvd8ut6f1c6h::::res://Graphics/Boss.png
-::res://Enemies/Scripts/::1733454154
-enemy.gd::GDScript::-1::1733244362::0::1::::<>CharacterBody2D<>::
-enemy_bullet.gd::GDScript::-1::1733244362::0::1::::<>Area2D<>::
-mothership.gd::GDScript::-1::1733454154::0::1::::<>CharacterBody2D<>::
-::res://Graphics/::1733454281
-Boss.png::CompressedTexture2D::8325877645534729453::1732663482::1733450761::1::::<><>::
-Enemies.png::CompressedTexture2D::1421221884032747960::1732644662::1733450764::1::::<><>::
-Enemy Lazer.png::CompressedTexture2D::5143282719427912938::1732644662::1733450768::1::::<><>::
-Heart.png::CompressedTexture2D::1195721653531228297::1732644662::1733450724::1::::<><>::
-Invisibility.png::CompressedTexture2D::7140270154202134967::1732644662::1733450727::1::::<><>::
-Players Lazer shoot.png::CompressedTexture2D::2183409002010958061::1733454262::1733454281::1::::<><>::
-Players.png::CompressedTexture2D::8399474728869994491::1732644662::1733450706::1::::<><>::
-::res://Items/::1733450727
-extra_lives.tscn::PackedScene::4221257519130195870::1733450723::0::1::::<><>::res://Items/Items.gd<>uid://rbhmjiiqx8nt::::res://Graphics/Heart.png<>uid://yun3dw4dju1y::::res://Sounds/8-bit Game Over.wav<>uid://dyi1qnuoh3emj::::res://Sounds/Death.wav
-invisibility.tscn::PackedScene::3621701541476561820::1733450727::0::1::::<><>::res://Items/Items2.gd<>uid://c8y2han13fhjb::::res://Graphics/Invisibility.png
-Items2.gd::GDScript::-1::1732644662::0::1::::<>Node2D<>::
-Items.gd::GDScript::-1::1733201197::0::1::::<>Node2D<>::
-ItemSpawner2.gd::GDScript::-1::1733244362::0::1::::<>Node<>::
-ItemSpawner.gd::GDScript::-1::1733244362::0::1::::<>Node<>::
-::res://Pause Menu/::1733456070
-Pause Menu.gd::GDScript::-1::1733438944::0::1::::<>Control<>::
+::res://Enemies/::1733588386
+enemy.tscn::PackedScene::5308081343719414611::1733588386::0::1::::<><>::res://Enemies/Scripts/enemy.gd<>uid://uipk1g80jm13::::res://Graphics/Enemies.png<>uid://dxkril3vn3mgr::::res://Sounds/Enemies Lazer Shot.wav<>uid://drjdiob2u8ivc::::res://Effects/Pixel explosion/pixelExplosion00.png<>uid://bv3jwqp1powyb::::res://Effects/Pixel explosion/pixelExplosion01.png<>uid://d0k5sy3sb8n::::res://Effects/Pixel explosion/pixelExplosion02.png<>uid://cp6f62xa7l2rk::::res://Effects/Pixel explosion/pixelExplosion03.png<>uid://dtwhm6wgj7e8m::::res://Effects/Pixel explosion/pixelExplosion04.png<>uid://bwgvn87pbx0la::::res://Effects/Pixel explosion/pixelExplosion05.png<>uid://dtymiftcb8eh6::::res://Effects/Pixel explosion/pixelExplosion06.png<>uid://c0l3hkcth2mpv::::res://Effects/Pixel explosion/pixelExplosion07.png<>uid://km31j53j8qwe::::res://Effects/Pixel explosion/pixelExplosion08.png
+enemy_bullet.tscn::PackedScene::2312522534824229057::1733588386::0::1::::<><>::res://Enemies/Scripts/enemy_bullet.gd<>uid://cfjpd543o2eog::::res://Graphics/Enemy Lazer.png<>uid://dxkril3vn3mgr::::res://Sounds/Enemies Lazer Shot.wav
+mothership.tscn::PackedScene::1904826172797596430::1733588386::0::1::::<><>::res://Enemies/Scripts/mothership.gd<>uid://77g548hwj31v::::res://Enemies/enemy_bullet.tscn<>uid://dqvd8ut6f1c6h::::res://Graphics/Boss.png<>uid://drjdiob2u8ivc::::res://Effects/Pixel explosion/pixelExplosion00.png<>uid://bv3jwqp1powyb::::res://Effects/Pixel explosion/pixelExplosion01.png<>uid://d0k5sy3sb8n::::res://Effects/Pixel explosion/pixelExplosion02.png<>uid://cp6f62xa7l2rk::::res://Effects/Pixel explosion/pixelExplosion03.png<>uid://dtwhm6wgj7e8m::::res://Effects/Pixel explosion/pixelExplosion04.png<>uid://bwgvn87pbx0la::::res://Effects/Pixel explosion/pixelExplosion05.png<>uid://dtymiftcb8eh6::::res://Effects/Pixel explosion/pixelExplosion06.png<>uid://c0l3hkcth2mpv::::res://Effects/Pixel explosion/pixelExplosion07.png<>uid://km31j53j8qwe::::res://Effects/Pixel explosion/pixelExplosion08.png
+::res://Enemies/Scripts/::1733588386
+enemy.gd::GDScript::-1::1733588386::0::1::::<>CharacterBody2D<>::
+enemy_bullet.gd::GDScript::-1::1733588386::0::1::::<>Area2D<>::
+mothership.gd::GDScript::-1::1733588386::0::1::::<>CharacterBody2D<>::
+::res://Graphics/::1733588386
+Boss.png::CompressedTexture2D::8325877645534729453::1733588386::1733588413::1::::<><>::
+Enemies.png::CompressedTexture2D::1421221884032747960::1733588386::1733588412::1::::<><>::
+Enemy Lazer.png::CompressedTexture2D::5143282719427912938::1733588386::1733588413::1::::<><>::
+Heart.png::CompressedTexture2D::1195721653531228297::1733588386::1733588413::1::::<><>::
+Invisibility.png::CompressedTexture2D::7140270154202134967::1733588386::1733588413::1::::<><>::
+Players Lazer shoot.png::CompressedTexture2D::2183409002010958061::1733588386::1733588413::1::::<><>::
+Players.png::CompressedTexture2D::8399474728869994491::1733588386::1733588413::1::::<><>::
+::res://Items/::1733588386
+extra_lives.tscn::PackedScene::4221257519130195870::1733588386::0::1::::<><>::res://Items/Items.gd<>uid://rbhmjiiqx8nt::::res://Graphics/Heart.png<>uid://yun3dw4dju1y::::res://Sounds/8-bit Game Over.wav<>uid://dyi1qnuoh3emj::::res://Sounds/Death.wav
+invisibility.tscn::PackedScene::3621701541476561820::1733588386::0::1::::<><>::res://Items/Items2.gd<>uid://c8y2han13fhjb::::res://Graphics/Invisibility.png
+Items2.gd::GDScript::-1::1733588361::0::1::::<>Node2D<>::
+Items.gd::GDScript::-1::1733588368::0::1::::<>Node2D<>::
+ItemSpawner2.gd::GDScript::-1::1733588386::0::1::::<>Node<>::
+ItemSpawner.gd::GDScript::-1::1733588386::0::1::::<>Node<>::
+::res://Pause Menu/::1733588386
+Pause Menu.gd::GDScript::-1::1733588386::0::1::::<>Control<>::
 Pause Menu.tscn::PackedScene::4424695042127903991::1733281096::0::1::::<><>::res://Pause Menu/PauseMenu.gdshader<>res://Pause Menu/Pause Menu.gd
-PauseMenu.gdshader::Shader::-1::1733456415::0::1::::<><>::
-::res://Players/::1733456070
-Laser.tscn::PackedScene::742495266226933893::1733452157::0::1::::<><>::res://Players/Player Script/Laser.gd<>uid://d3phrin7rxa7o::::res://Graphics/Players Lazer shoot.png<>uid://ci6y02whusux8::::res://Sounds/Player Lazer Shot.wav
+PauseMenu.gdshader::Shader::-1::1733588343::0::1::::<><>::
+::res://Players/::1733588386
+Laser.tscn::PackedScene::742495266226933893::1733588386::0::1::::<><>::res://Players/Player Script/Laser.gd<>uid://d3phrin7rxa7o::::res://Graphics/Players Lazer shoot.png<>uid://ci6y02whusux8::::res://Sounds/Player Lazer Shot.wav
 LaserWeapon.tscn::PackedScene::2420512433879527841::1733272261::0::1::::<><>::res://Players/Player Script/Laser_Weapon.gd
-Player.tscn::PackedScene::5955543257050969758::1733456070::0::1::::<><>::res://Players/Player Script/Players.gd<>uid://drw1eetuknjl0::::res://Graphics/Players.png<>res://Players/Player Script/Laser_Weapon.gd<>res://Connection/input_synchronizer.gd
-Players.tscn::PackedScene::3479497699629411237::1733456070::0::1::::<><>::uid://drw1eetuknjl0::::res://Graphics/Players.png<>res://Players/Player Script/Players.gd<>uid://baqrqr8owyv6p::::res://Players/LaserWeapon.tscn<>res://Connection/input_synchronizer.gd
-::res://Players/Player Script/::1733452772
+Player.tscn::PackedScene::5955543257050969758::1733588386::0::1::::<><>::res://Players/Player Script/Players.gd<>uid://drw1eetuknjl0::::res://Graphics/Players.png<>res://Players/Player Script/Laser_Weapon.gd<>res://Connection/input_synchronizer.gd
+Players.tscn::PackedScene::3479497699629411237::1733588386::0::1::::<><>::uid://drw1eetuknjl0::::res://Graphics/Players.png<>res://Players/Player Script/Players.gd<>uid://baqrqr8owyv6p::::res://Players/LaserWeapon.tscn<>res://Connection/input_synchronizer.gd
+::res://Players/Player Script/::1733588386
 Laser.gd::GDScript::-1::1733434575::0::1::::<>Area2D<>::
-Laser_Weapon.gd::GDScript::-1::1733444794::0::1::::<>Node2D<>::
-Players.gd::GDScript::-1::1733452772::0::1::::<>CharacterBody2D<>::
-::res://Sounds/::1733426328
+Laser_Weapon.gd::GDScript::-1::1733588386::0::1::::<>Node2D<>::
+Players.gd::GDScript::-1::1733588386::0::1::::<>CharacterBody2D<>::
+::res://Sounds/::1733588386
 8-bit Game Over.wav::AudioStreamWAV::1726659318407035508::1732644662::1733426328::1::::<><>::
-Boss Intro.wav::AudioStreamWAV::1682627972428197218::1732663482::1733426328::1::::<><>::
+Boss Intro.wav::AudioStreamWAV::1682627972428197218::1732663482::1733588413::1::::<><>::
 Death.wav::AudioStreamWAV::8861917249285161025::1732663482::1733426328::1::::<><>::
 Enemies Lazer Shot.wav::AudioStreamWAV::8795296329506920925::1732644662::1733426328::1::::<><>::
 Game Music.wav::AudioStreamWAV::168705574463172193::1732644662::1733426328::1::::<><>::
 Health.wav::AudioStreamWAV::1770713447556696926::1732663482::1733426328::1::::<><>::
 Invisbility.mp3::AudioStreamMP3::8833702500294707566::1732663482::1733426328::1::::<><>::
 Player Lazer Shot.wav::AudioStreamWAV::5399851132001988911::1732644662::1733426328::1::::<><>::
-::res://UI/::1733244725
-Score Label.gd::GDScript::-1::1733244362::0::1::::<>Label<>::
-Stopwatch.gd::GDScript::-1::1733244362::0::1::::Stopwatch<>Node<>::
-Stopwatch.tscn::PackedScene::6030287459135769838::1733244362::0::1::::<><>::res://UI/Stopwatch.gd
-wave_manager.gd::GDScript::-1::1733244725::0::1::::<>Node2D<>::
+::res://Space-Defenders-New/::1733524194
+::res://Space-Defenders-New/Background/::1733524192
+::res://Space-Defenders-New/Connection/::1733524192
+::res://Space-Defenders-New/Enemies/::1733524192
+::res://Space-Defenders-New/Items/::1733524193
+::res://Space-Defenders-New/Pause Menu/::1733524193
+::res://Space-Defenders-New/Players/::1733524194
+::res://Space-Defenders-New/Sounds/::1733524195
+::res://Space-Defenders-New/UI/::1733524195
+::res://UI/::1733588386
+Score Label.gd::GDScript::-1::1733588386::0::1::::<>Label<>::
+Stopwatch.gd::GDScript::-1::1733588386::0::1::::Stopwatch<>Node<>::
+Stopwatch.tscn::PackedScene::6030287459135769838::1733588386::0::1::::<><>::res://UI/Stopwatch.gd
+wave_manager.gd::GDScript::-1::1733588386::0::1::::<>Node2D<>::

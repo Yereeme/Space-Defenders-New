@@ -1,29 +1,19 @@
-res://Game.tscn
-res://Pause Menu/PauseMenu.gdshader
-res://Players.tscn
-res://Players/input_synchronizer.gd
-res://Game.gd
-res://Players/Lasers.tscn
-res://Players/Player Script/Laser.gd
-res://Enemies/mothership.gd
-res://Pause Menu/Pause Menu.gd
-res://Players/Players.tscn
-res://Enemies/enemy_bullet.tscn
 res://Enemies/enemy.tscn
-res://Player.tscn
 res://Players/Player Script/Players.gd
-res://Players/Laser.tscn
-res://Players/Player Script/Laser_Weapon.gd
-res://Connection/multiplayer.tscn
-res://Connection/multiplayer.gd
-res://Connection/WindowControl.tscn
-res://Players/Player.tscn
-res://Connection/WindowControl.gd
+res://Pause Menu/PauseMenu.gdshader
 res://Enemies/Scripts/mothership.gd
-res://Game Over.tscn
-res://quit.gd
-res://Connection/input_synchronizer.gd
+res://Connection/multiplayer.tscn
+res://Game.tscn
+res://Players/Player.tscn
 res://Enemies/mothership.tscn
 res://Items/extra_lives.tscn
 res://Items/invisibility.tscn
-res://Enemies/Scripts/enemy.gd
+res://Connection/multiplayer.gd
+res://Connection/input_synchronizer.gd
+res://Game.gd
+res://Items/ItemSpawner.gd
+res://Items/spawner_1.tscn
+res://Items/powerup.tscn
+res://Items/powerup.gd
+res://Items/shield_powerup.tscn
+res://Items/shield_powerup.gd

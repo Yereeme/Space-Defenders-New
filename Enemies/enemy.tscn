@@ -76,6 +76,7 @@ position = Vector2(-7.15454, -3.57728)
 shape = SubResource("RectangleShape2D_lsni7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(-1.78865, -1.78864)
 scale = Vector2(3.7636, 3.89177)
 sprite_frames = SubResource("SpriteFrames_qimk2")

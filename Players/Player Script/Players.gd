@@ -1,10 +1,12 @@
 extends CharacterBody2D
-
+#Partly thanks to CodeNMore
 const max_speed = 400
 const accel = 1500
 const friction = 600
 
 var input = Vector2.ZERO
+
+@export var speed: float = 500.0
 
 # Player health
 @export var max_health: int = 3  # Maximum health of the player
@@ -22,8 +24,13 @@ var lives_ui: Node = null
 
 # Player synchronized input.
 @onready var input_sync = $InputSynchronizer
+@onready var invincibilityTimer = $InvincibilityTimer
+@onready var shieldSprite = $Shield
+
+@export var damagedInvincibilityTime = 2.0
 
 func _ready() -> void:
+	shieldSprite.visible = false
 	# Assign the Lives node
 	lives_ui = get_node_or_null("../Lives")  # Adjust this path to match your scene
 	if lives_ui == null:
@@ -57,6 +64,10 @@ func _unhandled_key_input(event: InputEvent) -> void:
 
 # Handle taking damage from enemy bullets
 func take_damage(amount: int) -> void:
+	if !invincibilityTimer.is_stopped():
+		return
+	
+	applyShield(damagedInvincibilityTime)
 	current_health -= amount
 	print("Player hit! Remaining health:", current_health)  # Debugging message
 	update_lives_ui()  # Update the UI to reflect the remaining lives
@@ -78,3 +89,10 @@ func update_lives_ui() -> void:
 			life_icon.visible = true  # Show life icons for remaining health
 		else:
 			life_icon.visible = false  # Hide life icons for lost health
+
+func applyShield(time: float):
+	invincibilityTimer.start(time)
+	shieldSprite.visible = true
+
+func _on_invincibility_timer_timeout() -> void:
+	shieldSprite.visible = false

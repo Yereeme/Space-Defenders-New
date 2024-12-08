@@ -55,7 +55,9 @@ func die() -> void:
 	$AnimatedSprite2D.play("defeated")
 	# Remove the mothership when defeated
 	print("Boss defeated!")
-	queue_free()
+	if current_health <= 0:
+		get_tree().change_scene_to_file("res://Game Over.tscn")
+		queue_free()
 
 func start_shooting() -> void:
 	# Set up a timer to shoot bullets periodically
