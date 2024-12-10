@@ -1,13 +1,11 @@
-res://Items/powerup.tscn
-res://Players/Player Script/Players.gd
-res://Pause Menu/PauseMenu.gdshader
-res://Items/powerup.gd
-res://Connection/multiplayer.tscn
+res://Items/ItemSpawner.gd
+res://Items/ItemSpawner2.gd
 res://Game.tscn
-res://Players/Player.tscn
-res://Items/spawner_1.tscn
-res://Items/shield_powerup.tscn
-res://Enemies/mothership.tscn
-res://Enemies/enemy_bullet.tscn
-res://Items/shield_powerup.gd
-res://Enemies/Scripts/enemy_bullet.gd
+res://Pause Menu/PauseMenu.gdshader
+res://Connection/multiplayer.tscn
+res://Pause Menu/Pause Menu.tscn
+res://Players/Players.tscn
+res://Items/invisibility.tscn
+res://Players/Player Script/Players.gd
+res://Players/input_synchronizer.gd
+res://Game.gd
