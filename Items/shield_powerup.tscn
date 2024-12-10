@@ -5,3 +5,6 @@
 
 [node name="ShieldPowerup" instance=ExtResource("1_eqs5k")]
 script = ExtResource("2_o3lhv")
+shieldTime = null
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

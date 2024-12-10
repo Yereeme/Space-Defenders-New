@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 		queue_free()
 
 func _on_body_entered(body: Node) -> void:
-	print("Bullet collided with:", body)  # Debug to verify collision
+	print("Shield collided with:", body)  # Debug to verify collision
 	if body.is_in_group("players"):  # Check if it hit the player
 		body.take_damage(1)  # Call the player's take_damage function
 		queue_free()  # Destroy the bullet after hitting the player
