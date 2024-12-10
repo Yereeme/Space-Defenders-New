@@ -1,0 +1,11 @@
+res://Items/ItemSpawner.gd
+res://Items/ItemSpawner2.gd
+res://Game.tscn
+res://Pause Menu/PauseMenu.gdshader
+res://Connection/multiplayer.tscn
+res://Pause Menu/Pause Menu.tscn
+res://Players/Players.tscn
+res://Items/invisibility.tscn
+res://Players/Player Script/Players.gd
+res://Players/input_synchronizer.gd
+res://Game.gd

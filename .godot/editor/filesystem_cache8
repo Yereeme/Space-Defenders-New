@@ -1,0 +1,68 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1733082614
+Game.gd::GDScript::-1::1732644662::0::1::::<>Node2D<>::
+Game.tscn::PackedScene::6824016603833872445::1732828799::0::1::::<><>::res://Game.gd<>uid://bnx5v0l5w3kq5::::res://Background/Space Background.png<>uid://cou577hsu7v75::::res://Background/xetuna-planet.png<>uid://bptq23qhwwfqb::::res://Players/Players.tscn<>uid://cnys56o6rnjd::::res://Sounds/Game Music.wav<>uid://drw1eetuknjl0::::res://Players/Players.png<>res://Items/ItemSpawner.gd<>res://Items/ItemSpawner2.gd<>res://Connection/WindowControl.gd<>uid://b4bmc0rhj75rn::::res://Pause Menu/Pause Menu.tscn<>res://wave_manager.gd<>uid://chvjla11ng42j::::res://Enemies/Scripts/enemy.tscn
+icon.svg::CompressedTexture2D::7978215500813854408::1732644662::1732828654::1::::<><>::
+README.md::TextFile::-1::1732644100::0::1::::<><>::
+wave_manager.gd::GDScript::-1::1732644662::0::1::::<>Node2D<>::
+::res://Background/::1732828654
+Asteriods.png::CompressedTexture2D::4628071043599830928::1732644662::1732828654::1::::<><>::
+Space Background.png::CompressedTexture2D::3348216682256070566::1732644662::1732828654::1::::<><>::
+xetuna-planet.png::CompressedTexture2D::5798653080994484594::1732644662::1732828654::1::::<><>::
+::res://Connection/::1732828799
+multiplayer.gd::GDScript::-1::1732644662::0::1::::<>Node<>::
+multiplayer.tscn::PackedScene::5143570892802404392::1732828799::0::1::::<><>::res://Connection/multiplayer.gd
+WindowControl.gd::GDScript::-1::1732644662::0::1::::<>Node<>::
+WindowControl.tscn::PackedScene::4495873284206185259::1732644662::0::1::::<><>::
+::res://Effects/::1732663482
+::res://Effects/Pixel explosion/::1732828654
+pixelExplosion00.png::CompressedTexture2D::8371248968168426836::1732663482::1732828654::1::::<><>::
+pixelExplosion01.png::CompressedTexture2D::3918775582353871849::1732663482::1732828654::1::::<><>::
+pixelExplosion02.png::CompressedTexture2D::7730520655951043::1732663482::1732828654::1::::<><>::
+pixelExplosion03.png::CompressedTexture2D::5890030130611607376::1732663482::1732828654::1::::<><>::
+pixelExplosion04.png::CompressedTexture2D::8538714501762912206::1732663482::1732828654::1::::<><>::
+pixelExplosion05.png::CompressedTexture2D::3944261565811128578::1732663482::1732828654::1::::<><>::
+pixelExplosion06.png::CompressedTexture2D::8543138328625333557::1732663482::1732828654::1::::<><>::
+pixelExplosion07.png::CompressedTexture2D::6551983719183277803::1732663482::1732828654::1::::<><>::
+pixelExplosion08.png::CompressedTexture2D::728407996207848392::1732663482::1732828654::1::::<><>::
+::res://Enemies/::1732828654
+Boss.png::CompressedTexture2D::3989248631434998226::1732663482::1732828654::1::::<><>::
+Enemies.png::CompressedTexture2D::1421221884032747960::1732644662::1732828654::1::::<><>::
+Enemy Lazer.png::CompressedTexture2D::5143282719427912938::1732644662::1732828654::1::::<><>::
+enemy.gd::GDScript::-1::1732644662::0::1::::<>CharacterBody2D<>::
+enemy_bullet.gd::GDScript::-1::1732644662::0::1::::<>Area2D<>::
+::res://Enemies/Scripts/::1732828800
+enemy.tscn::PackedScene::5308081343719414611::1732828800::0::1::::<><>::res://Enemies/enemy.gd<>uid://uipk1g80jm13::::res://Enemies/Enemies.png<>uid://dxkril3vn3mgr::::res://Sounds/Enemies Lazer Shot.wav
+enemy_bullet.tscn::PackedScene::2312522534824229057::1732828800::0::1::::<><>::res://Enemies/enemy_bullet.gd<>uid://cfjpd543o2eog::::res://Enemies/Enemy Lazer.png<>uid://dxkril3vn3mgr::::res://Sounds/Enemies Lazer Shot.wav
+::res://Items/::1732828800
+extra_lives.tscn::PackedScene::4221257519130195870::1732828754::0::1::::<><>::res://Items/Items.gd<>uid://rbhmjiiqx8nt::::res://Items/Heart.png<>uid://0h0nk5non0tm::::res://Sounds/Health.wav
+Heart.png::CompressedTexture2D::1195721653531228297::1732644662::1732828654::1::::<><>::
+Invisibility.png::CompressedTexture2D::7140270154202134967::1732644662::1732828654::1::::<><>::
+invisibility.tscn::PackedScene::3621701541476561820::1732828800::0::1::::<><>::res://Items/Items2.gd<>uid://c8y2han13fhjb::::res://Items/Invisibility.png<>uid://dx4d13y4e04rq::::res://Sounds/Invisbility.mp3
+Items2.gd::GDScript::-1::1732644662::0::1::::<>Node2D<>::
+Items.gd::GDScript::-1::1732644662::0::1::::<>Node2D<>::
+ItemSpawner2.gd::GDScript::-1::1732644662::0::1::::<>Node<>::
+ItemSpawner.gd::GDScript::-1::1732644662::0::1::::<>Node<>::
+::res://Pause Menu/::1732828849
+Pause Menu.gd::GDScript::-1::1732644662::0::1::::<>Control<>::
+Pause Menu.tscn::PackedScene::4424695042127903991::1732828800::0::1::::<><>::res://Pause Menu/PauseMenu.gdshader<>res://Pause Menu/Pause Menu.gd
+PauseMenu.gdshader::Shader::-1::1732828849::0::1::::<><>::
+::res://Players/::1732828800
+Laser.tscn::PackedScene::742495266226933893::1732828800::0::1::::<><>::res://Players/Player Script/Laser.gd<>uid://d3phrin7rxa7o::::res://Players/Players Lazer shoot.png<>uid://ci6y02whusux8::::res://Sounds/Player Lazer Shot.wav
+LaserWeapon.tscn::PackedScene::2420512433879527841::1732828800::0::1::::<><>::res://Players/Player Script/Laser_Weapon.gd
+Players Lazer shoot.png::CompressedTexture2D::9155971158447669974::1732644662::1732828654::1::::<><>::
+Players.png::CompressedTexture2D::8399474728869994491::1732644662::1732828654::1::::<><>::
+Players.tscn::PackedScene::3479497699629411237::1732828800::0::1::::<><>::uid://drw1eetuknjl0::::res://Players/Players.png<>res://Players/Player Script/Players.gd<>uid://baqrqr8owyv6p::::res://Players/LaserWeapon.tscn
+::res://Players/Player Script/::1732644662
+Laser.gd::GDScript::-1::1732644662::0::1::::<>Area2D<>::
+Laser_Weapon.gd::GDScript::-1::1732644662::0::1::::<>Node2D<>::
+Players.gd::GDScript::-1::1732644662::0::1::::<>CharacterBody2D<>::
+::res://Sounds/::1732828654
+8-bit Game Over.wav::AudioStreamWAV::1726659318407035508::1732644662::1732828654::1::::<><>::
+Boss Intro.wav::AudioStreamWAV::2449152520037217774::1732663482::1732828654::1::::<><>::
+Death.wav::AudioStreamWAV::8861917249285161025::1732663482::1732828654::1::::<><>::
+Enemies Lazer Shot.wav::AudioStreamWAV::8795296329506920925::1732644662::1732828654::1::::<><>::
+Game Music.wav::AudioStreamWAV::168705574463172193::1732644662::1732828654::1::::<><>::
+Health.wav::AudioStreamWAV::1770713447556696926::1732663482::1732828654::1::::<><>::
+Invisbility.mp3::AudioStreamMP3::8833702500294707566::1732663482::1732828654::1::::<><>::
+Player Lazer Shot.wav::AudioStreamWAV::5399851132001988911::1732644662::1732828654::1::::<><>::
