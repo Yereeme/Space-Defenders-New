@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://baqrqr8owyv6p"]
+
+[ext_resource type="Script" path="res://Players/Player Script/Laser_Weapon.gd" id="1_t2s07"]
+
+[node name="LaserWeapon" type="Node2D"]
+script = ExtResource("1_t2s07")

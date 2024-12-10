@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ci6y02whusux8"
+path="res://.godot/imported/Player Lazer Shot.wav-3c2338ee41281448e5c7cb8ed00826c9.sample"
+
+[deps]
+
+source_file="res://Sounds/Player Lazer Shot.wav"
+dest_files=["res://.godot/imported/Player Lazer Shot.wav-3c2338ee41281448e5c7cb8ed00826c9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
