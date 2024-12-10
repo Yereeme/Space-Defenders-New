@@ -1,5 +1,5 @@
 extends Control
-# Youtube Tutorials URl:
+# Youtube Tutorials URl: https://www.youtube.com/watch?v=e9-WQg1yMCY&list=PLbSahu9sYUErP351x_acLNfnAkRrhZ19D&index=3
 
 func _ready():
 	$AnimationPlayer.play("RESET")
@@ -22,7 +22,7 @@ func _on_resume_pressed() -> void:
 	resume()
 
 func _on_restart_pressed() -> void:
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://Game.tscn")
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()

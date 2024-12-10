@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://4gnws64nfh6m"]
+
+[sub_resource type="GDScript" id="GDScript_u7c4f"]
+script/source = "extends Node
+#Thanks to CodeNMore
+var preloadedPowerups :=[
+	preload(\"res://Items/shield_powerup.tscn\"),
+]
+
+@onready var spawnTimer = $PowerupSpawnTimer
+
+@export var minPowerupSpawnTime = 3
+@export var maxPowerupSpawnTime = 20
+
+func _ready():
+	randomize()
+	spawnTimer.start(minPowerupSpawnTime)
+
+func getRandomSpawnPos() -> Vector2:
+	var viewRect = get_viewport_rect()
+	var xPos = ranf_range(viewRect.position.x, viewRect.end.x)
+	return Vector2(xPos, position.y)
+
+func _on_timer_timeout() -> void:
+	var powerupPreload = preloadedPowerups[randi() % preloadedPowerups.size()]
+	var powerup: Powerup = powerupPreload.instance()
+	powerup.position = getRandomSpawnPos()
+	get_tree().current_scene.add_child(powerup)
+	spawnTimer.start(ranf_range(minPowerupSpawnTime, maxPowerupSpawnTime))
+"
+
+[node name="Spawner1" type="Node"]
+script = SubResource("GDScript_u7c4f")
+
+[node name="PowerupSpawnTimer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+
+[connection signal="timeout" from="PowerupSpawnTimer" to="." method="_on_timer_timeout"]
