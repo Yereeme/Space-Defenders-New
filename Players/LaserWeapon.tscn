@@ -1,6 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://baqrqr8owyv6p"]
+[gd_scene load_steps=3 format=3 uid="uid://baqrqr8owyv6p"]
 
 [ext_resource type="Script" path="res://Players/Player Script/Laser_Weapon.gd" id="1_t2s07"]
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_4cc3t"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
 [node name="LaserWeapon" type="Node2D"]
 script = ExtResource("1_t2s07")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_4cc3t")
+
+[node name="gun" type="Node" parent="."]
+
+[node name="GunSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://Players/Laser.tscn")
+spawn_path = NodePath("../gun")
+spawn_limit = 10

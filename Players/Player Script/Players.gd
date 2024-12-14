@@ -19,7 +19,7 @@ var lives_ui: Node = null
 @export var player := 1:
 	set(id):
 		player = id
-		# Give authority over the player input to the appropriate peer.
+		# Assign network authority to the InputSynchronizer
 		$InputSynchronizer.set_multiplayer_authority(id)
 
 # Player synchronized input.
@@ -40,29 +40,34 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	player_movement(delta)
-
+@rpc("call_remote")
 func get_input() -> Vector2:
-	input.x = int(Input.is_action_pressed("Right")) - int(Input.is_action_pressed("Left"))
-	input.y = int(Input.is_action_pressed("Down")) - int(Input.is_action_pressed("Up"))
-	return input.normalized()
+	# Instead of checking Input.is_action_pressed(), we now rely on input_sync.direction
+	# This keeps the same logic but pulls direction data from the network-synced node.
+	var dir = input_sync.direction
+	return dir.normalized()
 
 func player_movement(delta: float) -> void:
 	input = get_input()
+	
 	if input == Vector2.ZERO:
+		# Apply friction to gradually slow down
 		if velocity.length() > (friction * delta):
 			velocity -= velocity.normalized() * (friction * delta)
 		else:
 			velocity = Vector2.ZERO
 	else:
+		# Accelerate in the direction of input
 		velocity += (input * accel * delta)
 		velocity = velocity.limit_length(max_speed)
+	
 	move_and_slide()
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Shoot"):
 		$Lasers.shoot()  # Call the shoot function
+		input_sync.attacking = true
 
-# Handle taking damage from enemy bullets
 func take_damage(amount: int) -> void:
 	if !invincibilityTimer.is_stopped():
 		return
@@ -77,7 +82,6 @@ func take_damage(amount: int) -> void:
 		print("Player is dead!")
 		queue_free()  # Remove the player when health is 0
 
-# Update the UI to reflect the player's remaining lives
 func update_lives_ui() -> void:
 	if lives_ui == null:
 		print("Error: Cannot update Lives UI. Lives node is not assigned!")
@@ -85,10 +89,7 @@ func update_lives_ui() -> void:
 
 	for i in range(lives_ui.get_child_count()):
 		var life_icon = lives_ui.get_child(i)
-		if i < current_health:
-			life_icon.visible = true  # Show life icons for remaining health
-		else:
-			life_icon.visible = false  # Hide life icons for lost health
+		life_icon.visible = (i < current_health)  # Show/hide life icons
 
 func applyShield(time: float):
 	invincibilityTimer.start(time)

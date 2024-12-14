@@ -9,6 +9,10 @@ var health: int = 1  # Enemies die after one hit
 
 func _ready() -> void:
 	# Create a timer to handle shooting
+	
+	if not multiplayer.is_server():
+		return
+		
 	var shooting_timer = Timer.new()
 	shooting_timer.wait_time = shooting_interval
 	shooting_timer.autostart = true
@@ -25,7 +29,13 @@ func _on_shooting_timer_timeout() -> void:
 	var bullet = bullet_scene.instantiate()
 	bullet.position = $Muzzle.global_position  # Spawn bullet from the muzzle
 	bullet.direction = Vector2.LEFT  # Set bullet direction to left
-	get_tree().current_scene.add_child(bullet)  # Add bullet to the current scene
+	#get_tree().current_scene.add_child(bullet)  # Add bullet to the current scene
+	if $pew:
+		$pew.add_child(bullet, true)
+	elif get_tree().current_scene:
+		get_tree().current_scene.add_child(bullet)
+	else:
+		print("Error: No valid parent to add bullet!")
 
 # Handle taking damage from player bullets
 func take_damage(amount: int) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://2eyhdlnm4py1"]
+[gd_scene load_steps=17 format=3 uid="uid://2eyhdlnm4py1"]
 
 [ext_resource type="Script" path="res://Enemies/Scripts/mothership.gd" id="1_8w2av"]
 [ext_resource type="PackedScene" uid="uid://77g548hwj31v" path="res://Enemies/enemy_bullet.tscn" id="2_7mxcn"]
@@ -60,11 +60,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_qukod"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
 [node name="Mothership" type="CharacterBody2D" groups=["enemies"]]
 rotation = -1.5708
+scale = Vector2(0.687467, 0.687467)
 collision_layer = 64
 collision_mask = 2
 script = ExtResource("1_8w2av")
+max_health = 100
 bullet_scene = ExtResource("2_7mxcn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -98,3 +108,13 @@ frame_progress = 1.0
 stream = ExtResource("13_wp12h")
 volume_db = 6.0
 autoplay = true
+
+[node name="MotherShipSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_qukod")
+
+[node name="mothershell" type="Node" parent="."]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://Enemies/enemy_bullet.tscn")
+spawn_path = NodePath("../mothershell")
+spawn_limit = 10

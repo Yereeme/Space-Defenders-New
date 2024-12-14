@@ -12,7 +12,7 @@ size = Vector2(74, 71)
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_v06n8"]
 properties/0/path = NodePath(".:player")
 properties/0/spawn = true
-properties/0/replication_mode = 0
+properties/0/replication_mode = 1
 properties/1/path = NodePath(".:position")
 properties/1/spawn = true
 properties/1/replication_mode = 1
@@ -53,5 +53,12 @@ one_shot = true
 position = Vector2(80.5, 563.5)
 scale = Vector2(0.185, 0.198333)
 texture = ExtResource("5_uxubm")
+
+[node name="gun" type="Node" parent="."]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://Players/Laser.tscn", "res://Players/LaserWeapon.tscn")
+spawn_path = NodePath("../gun")
+spawn_limit = 13
 
 [connection signal="timeout" from="InvincibilityTimer" to="." method="_on_invincibility_timer_timeout"]

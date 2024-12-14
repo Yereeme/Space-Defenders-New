@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://77g548hwj31v"]
+[gd_scene load_steps=6 format=3 uid="uid://77g548hwj31v"]
 
 [ext_resource type="Script" path="res://Enemies/Scripts/enemy_bullet.gd" id="1_tn4cd"]
 [ext_resource type="Texture2D" uid="uid://cfjpd543o2eog" path="res://Graphics/Enemy Lazer.png" id="2_ditdl"]
@@ -6,6 +6,14 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26upx"]
 size = Vector2(37, 16)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_rr41s"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
 
 [node name="EnemyBullet" type="Area2D"]
 collision_layer = 1056
@@ -25,5 +33,8 @@ shape = SubResource("RectangleShape2D_26upx")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_tte0g")
 autoplay = true
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_rr41s")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

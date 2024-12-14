@@ -22,6 +22,9 @@ var in_phase_2: bool = false
 var time_elapsed: float = 0.0  
 
 func _ready() -> void:
+	
+	if not multiplayer.is_server():
+		return
 	# Start the shooting cycle when the mothership spawns
 	start_shooting()
 
@@ -67,6 +70,7 @@ func start_shooting() -> void:
 	attack_timer.one_shot = false
 	add_child(attack_timer)
 	attack_timer.timeout.connect(Callable(self, "_perform_attack"))
+	
 
 func _perform_attack() -> void:
 	# Randomly pick an attack type
@@ -95,20 +99,24 @@ func shoot_tracking_bullet() -> void:
 	spawn_bullet(middle_cannon.global_position, Vector2.ZERO, true)
 
 func spawn_bullet(position: Vector2, direction: Vector2 = Vector2.ZERO, is_tracking: bool = false) -> void:
-	var bullet = bullet_scene.instantiate()
-	bullet.position = position
+	var bullet = bullet_scene.instantiate()  # Create a new bullet instance
+	bullet.position = position  # Set the bullet's position
+	bullet.direction = direction  # Set the bullet's direction
 
-	if is_tracking:
-		# Find the player and aim at them
-		var player = $Player  # Adjust if needed
-		if player:
-			bullet.direction = (player.global_position - position).normalized()
+	# Add the bullet to the "pew" node if it exists
+	if $mothershell:
+		$mothershell.add_child(bullet, true)  # Add the bullet to the "pew" container
+		print("Bullet added to pew at position:", position)
 	else:
-		# For normal bullets, set the provided direction
-		bullet.direction = direction
+		print("Error: pew node not found! Adding bullet to current scene.")
+		if get_tree().current_scene:
+			get_tree().current_scene.add_child(bullet)  # Fallback to adding bullet to the current scene
+		else:
+			print("Error: No valid parent to add bullet!")
 
-	# Add the bullet to the scene
-	get_tree().current_scene.add_child(bullet)
+
+
+	
 
 func phase_2_movement(delta: float) -> void:
 	# Make the mothership move up and down more dramatically in Phase 2

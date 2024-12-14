@@ -1,7 +1,7 @@
-res://Game.tscn
+res://Connection/multiplayer.tscn
 res://Players/Player Script/Players.gd
 res://Pause Menu/PauseMenu.gdshader
-res://Connection/multiplayer.tscn
+res://Game.tscn
 res://Players/Player.tscn
 res://Enemies/enemy_bullet.tscn
 res://Game Over.tscn
@@ -9,4 +9,12 @@ res://Win.tscn
 res://Enemies/mothership.tscn
 res://Enemies/enemy.tscn
 res://Pause Menu/Pause Menu.tscn
+res://UI/wave_manager.gd
+res://Enemies/Scripts/enemy.gd
+res://wave_manager.tscn
+res://Enemies/Scripts/mothership.gd
+res://Enemies/Scripts/enemy_bullet.gd
+res://Players/Player Script/Laser_Weapon.gd
+res://Players/LaserWeapon.tscn
+res://Players/Laser.tscn
 res://Game.gd

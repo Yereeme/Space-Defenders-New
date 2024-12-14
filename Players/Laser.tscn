@@ -1,11 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://ktw12tmhtr8x"]
+[gd_scene load_steps=6 format=3 uid="uid://ktw12tmhtr8x"]
 
 [ext_resource type="Script" path="res://Players/Player Script/Laser.gd" id="1_7o15s"]
-[ext_resource type="Texture2D" uid="uid://d3phrin7rxa7o" path="res://Graphics/Players Lazer shoot.png" id="1_q1bcd"]
+[ext_resource type="Texture2D" uid="uid://6dwor6fa47xx" path="res://Graphics/Players Lazer shoot.png" id="1_q1bcd"]
 [ext_resource type="AudioStream" uid="uid://ci6y02whusux8" path="res://Sounds/Player Lazer Shot.wav" id="2_2oxvu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnf4n"]
 size = Vector2(77, 31)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_paqv7"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
 
 [node name="Laser" type="Area2D"]
 collision_layer = 2
@@ -26,6 +34,9 @@ stream = ExtResource("2_2oxvu")
 autoplay = true
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_paqv7")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

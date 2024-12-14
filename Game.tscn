@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c4hus6jiwsjon"]
+[gd_scene load_steps=15 format=3 uid="uid://c4hus6jiwsjon"]
 
 [ext_resource type="Script" path="res://Game.gd" id="1_hnkhj"]
 [ext_resource type="Texture2D" uid="uid://bnx5v0l5w3kq5" path="res://Background/Space Background.png" id="2_mqjvd"]
@@ -7,11 +7,9 @@
 [ext_resource type="Script" path="res://UI/Score Label.gd" id="5_toc4t"]
 [ext_resource type="AudioStream" uid="uid://cnys56o6rnjd" path="res://Sounds/Game Music.wav" id="5_v3vho"]
 [ext_resource type="Texture2D" uid="uid://drw1eetuknjl0" path="res://Graphics/Players.png" id="6_is43n"]
+[ext_resource type="PackedScene" uid="uid://d3jn6am0y2pqc" path="res://wave_manager.tscn" id="9_cvies"]
 [ext_resource type="PackedScene" uid="uid://b4bmc0rhj75rn" path="res://Pause Menu/Pause Menu.tscn" id="10_v7yhh"]
-[ext_resource type="Script" path="res://UI/wave_manager.gd" id="11_barex"]
-[ext_resource type="PackedScene" uid="uid://chvjla11ng42j" path="res://Enemies/enemy.tscn" id="12_cer12"]
 [ext_resource type="Script" path="res://Connection/quit.gd" id="15_4otwu"]
-[ext_resource type="PackedScene" uid="uid://2eyhdlnm4py1" path="res://Enemies/mothership.tscn" id="15_gom07"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fputq"]
 
@@ -77,9 +75,14 @@ text = "Score:"
 [node name="Player" type="Node" parent="." groups=["players"]]
 
 [node name="PlayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://Players/Player.tscn")
+_spawnable_scenes = PackedStringArray("res://Players/Player.tscn", "res://Players/Laser.tscn")
 spawn_path = NodePath("../Player")
 spawn_limit = 2
+
+[node name="WaveSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://Enemies/mothership.tscn", "res://Enemies/enemy.tscn")
+spawn_path = NodePath("../Wave Manager/Wave")
+spawn_limit = 100
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_v3vho")
@@ -156,12 +159,9 @@ shape = SubResource("WorldBoundaryShape2D_tbfd0")
 offset_top = 1.0
 offset_bottom = 1.0
 
-[node name="Wave Manager" type="Node2D" parent="."]
-script = ExtResource("11_barex")
-enemy_scene = ExtResource("12_cer12")
-mothership_scene = ExtResource("15_gom07")
-wave_interval = 3.0
-mothership_spawn_time = 2.0
+[node name="Wave Manager" parent="." instance=ExtResource("9_cvies")]
+
+[node name="Wave" type="Node" parent="Wave Manager"]
 
 [node name="Quit" type="Node" parent="."]
 script = ExtResource("15_4otwu")

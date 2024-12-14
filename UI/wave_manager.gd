@@ -1,7 +1,7 @@
 extends Node2D
 
-@export var enemy_scene: PackedScene  # Assign your Enemy.tscn here
-@export var mothership_scene: PackedScene  # Assign your Mothership.tscn here
+@export var enemy_scene: PackedScene  
+@export var mothership_scene: PackedScene  
 @export var wave_interval: float = 5.0  # Time between waves in seconds
 @export var mothership_spawn_time: float = 30.0  # Time before the mothership spawns
 @export var enemies_per_wave: int = 3  # Number of enemies per wave
@@ -11,6 +11,8 @@ var is_mothership_active: bool = false  # Tracks if the mothership is currently 
 
 func _ready() -> void:
 	# Start the wave spawning process
+	if not multiplayer.is_server():
+		return
 	start_wave_spawning()
 
 	# Set a timer for the mothership to spawn
@@ -38,7 +40,8 @@ func spawn_enemy() -> void:
 	# Add slight vertical variation to the spawn position
 	enemy.position = spawn_position + Vector2(0, randf_range(-200, 200))
 	# Safely add the enemy using call_deferred to avoid setup issues
-	get_tree().current_scene.call_deferred("add_child", enemy)
+	#get_tree().current_scene.call_deferred("add_child", enemy)
+	$enem.add_child(enemy, true)
 
 func spawn_mothership() -> void:
 	print("Spawning mothership...")
@@ -47,7 +50,8 @@ func spawn_mothership() -> void:
 	# Instantiate the mothership
 	var mothership = mothership_scene.instantiate()
 	mothership.position = Vector2(500, 200)  # Adjust the position as needed
-	get_tree().current_scene.add_child(mothership)
+	#get_tree().current_scene.call_deferred("add_child", mothership)
+	$enem.add_child(mothership, true)
 
 	# Connect to the tree_exited signal to detect when the mothership is removed
 	mothership.connect("tree_exited", Callable(self, "_on_mothership_defeated"))

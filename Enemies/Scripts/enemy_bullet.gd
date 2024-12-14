@@ -4,7 +4,7 @@ extends Area2D
 var direction: Vector2 = Vector2.LEFT  # Default direction
 
 func _ready() -> void:
-	# Nothing needed here for now unless initialization is required
+	
 	pass
 
 func _physics_process(delta: float) -> void:
