@@ -56,7 +56,7 @@ func die() -> void:
 	# Remove the mothership when defeated
 	print("Boss defeated!")
 	if current_health <= 0:
-		get_tree().change_scene_to_file("res://Game Over.tscn")
+		get_tree().change_scene_to_file("res://Win.tscn")
 		queue_free()
 
 func start_shooting() -> void:

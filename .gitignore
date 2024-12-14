@@ -19,3 +19,4 @@ Editor-specific files
 
 Logs
 logs/
+*.cache

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c4hus6jiwsjon"]
+[gd_scene load_steps=17 format=3 uid="uid://c4hus6jiwsjon"]
 
 [ext_resource type="Script" path="res://Game.gd" id="1_hnkhj"]
 [ext_resource type="Texture2D" uid="uid://bnx5v0l5w3kq5" path="res://Background/Space Background.png" id="2_mqjvd"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" path="res://UI/Score Label.gd" id="5_toc4t"]
 [ext_resource type="AudioStream" uid="uid://cnys56o6rnjd" path="res://Sounds/Game Music.wav" id="5_v3vho"]
 [ext_resource type="Texture2D" uid="uid://drw1eetuknjl0" path="res://Graphics/Players.png" id="6_is43n"]
-[ext_resource type="PackedScene" uid="uid://4gnws64nfh6m" path="res://Items/spawner_1.tscn" id="8_gopnc"]
 [ext_resource type="PackedScene" uid="uid://b4bmc0rhj75rn" path="res://Pause Menu/Pause Menu.tscn" id="10_v7yhh"]
 [ext_resource type="Script" path="res://UI/wave_manager.gd" id="11_barex"]
 [ext_resource type="PackedScene" uid="uid://chvjla11ng42j" path="res://Enemies/enemy.tscn" id="12_cer12"]
@@ -26,14 +25,21 @@
 script = ExtResource("1_hnkhj")
 stopwatch_label = NodePath("Stopwatch Label")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_offset = Vector2(-1, 0)
+motion_mirroring = Vector2(960, 0)
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
 position = Vector2(582, 338)
 scale = Vector2(1.325, 1.39259)
 texture = ExtResource("2_mqjvd")
 
-[node name="Planet" type="Sprite2D" parent="Background"]
-position = Vector2(362.264, 153.67)
-scale = Vector2(0.416569, 0.371316)
+[node name="Planet" type="Sprite2D" parent="."]
+position = Vector2(1065, 544)
+scale = Vector2(0.551954, 0.517091)
 texture = ExtResource("3_edr7j")
 
 [node name="Stopwatch" parent="." instance=ExtResource("4_r3yj8")]
@@ -52,9 +58,9 @@ text = "00:00:000"
 vertical_alignment = 1
 
 [node name="Score Label" type="Label" parent="."]
-offset_left = 941.0
+offset_left = 962.0
 offset_top = 123.0
-offset_right = 1062.0
+offset_right = 1083.0
 offset_bottom = 151.0
 scale = Vector2(1.5, 1.5)
 text = "000"
@@ -83,11 +89,12 @@ autoplay = true
 offset_left = 24.0
 offset_top = 19.0
 offset_right = 403.0
-offset_bottom = 172.0
+offset_bottom = 201.0
 text = "									Controls:
 
 * Pause Game press \"P\"
-* Move Player press \"AWSD\" or \"Arrow Keys\"
+* Player 1 press \"Arrow Keys\"
+* Player 2 press \"AWSD\"
 * Shoot press \"SpaceBar\"
 "
 editable = false
@@ -143,15 +150,11 @@ position = Vector2(1153, 340)
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_tbfd0")
 
-[node name="Spawner1" parent="." instance=ExtResource("8_gopnc")]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("10_v7yhh")]
-offset_left = 1.0
-offset_top = 2.0
-offset_right = 1.0
-offset_bottom = 2.0
+offset_top = 1.0
+offset_bottom = 1.0
 
 [node name="Wave Manager" type="Node2D" parent="."]
 script = ExtResource("11_barex")

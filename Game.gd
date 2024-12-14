@@ -3,10 +3,18 @@ class_name Game
 
 @export var stopwatch_label : Label
 
+@onready var pb = $ParallaxBackground
+
 var stopwatch : Stopwatch
+var scroll_speed = 100
 
 func _process(delta):
 	update_stopwatch_label()
+	
+	pb.scroll_offset.x += delta*scroll_speed 
+	if pb.scroll_offset.x >= 960:
+		pb.scroll_offset.x = 0
+	print(pb.scroll_offset.x)
 
 func _ready():
 	stopwatch = get_tree().get_first_node_in_group("Stopwatch")
