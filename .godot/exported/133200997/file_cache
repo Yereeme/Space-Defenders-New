@@ -1,0 +1,14 @@
+res://Connection/multiplayer.tscn::dd5316010ebff7fa28af50f075d52820::1734218698::res://.godot/exported/133200997/export-7a91dcde8e9d103c96535175dee06956-multiplayer.scn
+res://Enemies/enemy.tscn::9fb2ddd6948a7c3a7843d4783775e2c3::1734218699::res://.godot/exported/133200997/export-ea09a7a9bae2256955b1ef54748fdfa6-enemy.scn
+res://Enemies/enemy_bullet.tscn::3b64d9de1d105231f68d1c927bf608cc::1734218699::res://.godot/exported/133200997/export-bd205503559be74a8b721bf808c6886b-enemy_bullet.scn
+res://Enemies/mothership.tscn::1dea4664a8bd0b47b6178bfeb056db23::1734218699::res://.godot/exported/133200997/export-f16d6806e5399b110945f454df65c213-mothership.scn
+res://Items/spawner_1.tscn::cbec58bad85458d63de7ab7d32ceb66b::1734215215::res://.godot/exported/133200997/export-cb6544c509a943fb11ee7cfd93b31ed8-spawner_1.scn
+res://Pause Menu/Pause Menu.tscn::6ea255ca3d201f4aa07bff7c508093fd::1734218699::res://.godot/exported/133200997/export-fa2312c806f49200a3286e46e1a81458-Pause Menu.scn
+res://Players/Laser.tscn::64ec4a30ef938e33077994f0bc0aa5a5::1734218699::res://.godot/exported/133200997/export-2f1d4fbf6ec625a06c53da5f54a1a0b8-Laser.scn
+res://Players/LaserWeapon.tscn::d33bb1e3875fa2e5126f5db18b0cf4a7::1734218699::res://.godot/exported/133200997/export-cd8ed35c5246496c475f36aa6c5fe430-LaserWeapon.scn
+res://Players/Player.tscn::0651aa5910ff76fca55f0d151b952878::1734218699::res://.godot/exported/133200997/export-9e2f26ded8ac0dd88d44ed1be317779f-Player.scn
+res://UI/Stopwatch.tscn::93efcbb110df9c0854e7cf187aa7487b::1734193329::res://.godot/exported/133200997/export-05e3d5e014e52b19e78098616d9544ad-Stopwatch.scn
+res://Game Over.tscn::7148c6797dc946fa8a7c6fcb98f7b0f4::1734218699::res://.godot/exported/133200997/export-1e16be711282b1a720a0912f927b374c-Game Over.scn
+res://Game.tscn::77114607646e57ece53e6c7be25546cb::1734218877::res://.godot/exported/133200997/export-6455994a605b35b7d96f8362f3055c4a-Game.scn
+res://wave_manager.tscn::b72de081f4f76a3ec9d3c765dea9928f::1734218699::res://.godot/exported/133200997/export-0b672932c6fb88f045a16d3dfebecacc-wave_manager.scn
+res://Win.tscn::2f02461df0a979697f3aa72cdf3cd2ae::1734218699::res://.godot/exported/133200997/export-ff9a74fd005be81f18d9e78bd2fd0625-Win.scn
